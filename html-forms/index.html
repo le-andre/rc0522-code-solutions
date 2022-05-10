@@ -7,40 +7,72 @@
   <body>
     <h1>Coding Form!</h1>
 
-    <label for="email">Email</label>
-    <br />
-    <input type="text" id="email" name="name" required minlength="4" maxlength="18" size="10">
-    <br />
-    <label for="options">Why is coding cool?</label>
-    <br />
-    <select name="Select Options">
-      <option value="option">Select an option</option>
-      <option value="interesting">Because it's interesting</option>
-      <option value="fun">Because it's fun</option>
-      <option value="powerful">Because it's powerful</option>
-    </select>
-
-
-    <p>Favorite Language (choose one)</p>
-    <input type="radio" name="language"
-          value="html" /> HTML
-    <input type="radio" name="language" value="css"/> CSS
-    <input type="radio" name="language" value="javascript"/> JavaScript
-
     <div>
-      <p>Would you like to sign up for more information?</p>
-      <form action="">
-        <input type="checkbox" name="question" value="yes"/> Sign me up!
-      </form>
+      <label for="email">Email</label>
     </div>
 
     <div>
-      <label for="Comments">Comments</label>
-      <form action="">
-        <textarea name="comments" cols="30" rows="10"></textarea>
-        <br />
-        <input type="submit" value="Submit"/>
-      </form>
+      <input type="text" id="email" name="name" required minlength="4" maxlength="18" size="10">
+    </div>
+
+    <div>
+      <label for="options">Why is coding cool?</label>
+    </div>
+
+    <div>
+      <select id="options" name="options-list">
+        <option value="option">Select an option</option>
+        <option value="interesting">Because it's interesting</option>
+        <option value="fun">Because it's fun</option>
+        <option value="powerful">Because it's powerful</option>
+      </select>
+    </div>
+
+    <div>
+      <p></p>
+    </div>
+
+    <p>Favorite Language (choose one)</p>
+
+    <div>
+      <p></p>
+    </div>
+
+    <div>
+      <input type="radio" id="html" name="language" value="HTML"/>
+      <label for="html">HTML</label>
+      <input type="radio" id="css" name="language" value="CSS"/>
+      <label for="css">CSS</label>
+      <input type="radio" id="javascript" name="language" value="JavaScript"/>
+      <label for="javascript">JavaScript</label>
+    </div>
+
+    <div>
+      <p></p>
+    </div>
+
+    <div>
+      <label for="question">Would you like to sign up for more information?</label>
+    </div>
+
+    <div>
+      <p></p>
+    </div>
+
+    <div>
+      <input id="question" type="checkbox" name="question" value="yes"/>
+      <label for="question">Sign me up!</label>
+      <div>
+        <label for="comments">Comments</label>
+      </div>
+    </div>
+
+    <textarea id="comments" name="comment" cols="30" rows="10"></textarea>
+
+    <div>
+      <input type="submit" value="Submit"/>
+    </div>
+
     </div>
 
 

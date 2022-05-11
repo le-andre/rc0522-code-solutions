@@ -1,0 +1,10 @@
+button:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+th {
+  background-color: #000;
+  color: #fff;
+}

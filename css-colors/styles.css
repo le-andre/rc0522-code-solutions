@@ -9,7 +9,7 @@ body {
 
 section {
   padding: 1.5rem 0;
-  background-color: lightblue;
+  background-color: #f3fafb;
 }
 
 h2 {
@@ -45,7 +45,7 @@ button {
   padding-right: 1.25rem;
   margin-left: 0.25rem;
   border: none;
-  background-color: green;
+  background-color: #0ac837;
   font-weight: 500;
   color: white;
 }

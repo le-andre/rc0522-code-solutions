@@ -5,6 +5,7 @@ h1 {
   src: url("BrandonGrotesque-Medium.woff2") format("woff2");
   color: red;
   text-align: center;
+  font-size: 25px;
 }
 
 label {
@@ -13,7 +14,8 @@ label {
   font-weight: 500;
   src: url("BrandonGrotesque-Medium.woff2") format("woff2");
   text-align: left;
-  margin: 40px 5px;
+  font-size: 16px;
+  padding-left: 10px;
 }
 
 input {
@@ -25,6 +27,7 @@ input {
   border-radius: 10px;
   border-color: #8d898921;
   padding: 10px;
+  font-size: 20px;
 }
 
 button {
@@ -36,19 +39,29 @@ button {
   color: white;
   border-style: hidden;
   padding: 10px 20px;
-  margin: 4px 855px;
+  margin: 4px 21em;
   cursor: pointer;
   border-radius: 16px;
 }
 
 select {
-  background-color: #8d898936;
+  background-color: #8d89892a;
+  font-family: "Brandon Grotesque", serif;
+  font-style: normal;
+  font-weight: normal;
+  src: url("BrandonGrotesque-Regular.woff2") format("woff2");
+  text-align: left;
+  border-radius: 10px;
+  border-color: #8d898921;
+  padding: 10px;
+  font-size: 20px;
+  width: 126%;
 }
 
 div.center {
   margin: auto;
   width: 40%;
-  padding: 10px;
+  padding: 3px;
 }
 
 div.right {

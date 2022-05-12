@@ -1,0 +1,14 @@
+h1 {
+  font-family: 'Comic Neue',
+  cursive;
+}
+
+body, h2 {
+  font-family: 'Baloo Thambi 2',
+  cursive;
+  line-height: 30px;
+}
+
+h2 {
+  font-style: italic;
+}

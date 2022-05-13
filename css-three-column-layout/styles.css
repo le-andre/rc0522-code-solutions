@@ -11,7 +11,7 @@
   display: flex;
   text-align: center;
   color: white;
-  padding: 14px 15px;
+  padding: 27px 446px;
   align-items: center;
   justify-content: center;
 }
@@ -40,7 +40,7 @@ img {
   background-color: white;
   border-radius: 50%;
   width: calc(100% / 3);
-  padding: 40px;
+  padding: 8px;
 }
 
 .head {

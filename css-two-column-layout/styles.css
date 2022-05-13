@@ -58,6 +58,10 @@ button {
   background-color: white;
   border-color: rgb(255 0 0 / 47.9%);
   margin-left: 529px;
+  padding: 10px 40px;
+  font-style: bolder;
+  font-weight: bold;
+  font-size: 16px;
 }
 
 h2 {

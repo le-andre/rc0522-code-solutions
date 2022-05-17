@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  justify-content: center;
+  font-family: Barlow, sans-serif;
+}
+
+.row {
+  display: flex;
+  background-color: black;
+}
+
+.column-full {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: blue;
+}
+
+.column-one-fourth {
+  width: calc(100% / 4);
+  flex-basis: 100%;
+  flex-direction: column;
+  background-color: red;
+}

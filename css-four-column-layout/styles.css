@@ -1,0 +1,46 @@
+.container {
+  max-width: 1200px;
+  max-height: 800px;
+  font-family: Barlow, sans-serif;
+}
+
+.row {
+  display: flex;
+  width: 100%;
+}
+
+.column-full {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.column-one-fourth {
+  display: flex;
+  width: calc(100% / 4);
+  flex-basis: 100%;
+  flex-direction: column;
+}
+
+img.icon {
+  width: 20%;
+}
+
+.bodycontent {
+  display: flex;
+  justify-content: center;
+}
+
+img.bodypic {
+  width: 100%;
+}
+
+h2 {
+  font-size: 30px;
+  font-weight: 800;
+}
+
+p {
+  font-weight: 400;
+}

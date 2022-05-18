@@ -1,0 +1,60 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: "DM Sans", sans-serif;
+}
+
+.row {
+  display: flex;
+  width: 100%;
+}
+
+.column-full {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.column-one-fifth {
+  line-height: 4px;
+  display: flex;
+  flex-direction: column;
+  width: calc(100% / 5);
+  align-items: flex-start;
+}
+
+.column-one-fifth-img {
+  padding-left: 10px;
+  padding-right: 10px;
+  display: flex;
+  width: calc(100% / 5);
+  flex-direction: column;
+  justify-content: center;
+}
+
+img {
+  width: 100%;
+}
+
+img.body-lv-bag {
+  width: 242px;
+}
+
+img.body-dress {
+  width: 100%;
+}
+
+p {
+  font-size: 16px;
+  color: #080808;
+  font-weight: 600;
+}
+
+span {
+  color: #ddd;
+}
+
+mark {
+  background: #fff2e7;
+}

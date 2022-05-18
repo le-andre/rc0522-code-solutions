@@ -54,3 +54,7 @@ p {
 span {
   color: #ddd;
 }
+
+mark {
+  background: #fff2e7;
+}

@@ -8,8 +8,10 @@
 function capitalize(word) {
   var capitalizeResult = [];
   for (var i = 0; i < word.length; i++) {
-    if (word[0] === i.tolowerCase()) {
-      capitalizeResult.push(word[0].toUpperCase());
+    if (word[(0)] === (word[(0)].toLowerCase())) {
+      capitalizeResult = (word[0].toUpperCase());
+    } else {
+      capitalizeResult = word[i].toLowerCase();
     }
   }
   return capitalizeResult;

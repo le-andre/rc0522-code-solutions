@@ -34,17 +34,17 @@ function isOldEnoughToDrive(person) {
 }
 
 function isOldEnoughToDrinkAndDrive(person) {
-  var isOldEnoughToDrinkAndDriveResult = (isOldEnoughToDrink > 15) === (isOldEnoughToDrive > 20);
+  var isOldEnoughToDrinkAndDriveResult = (isOldEnoughToDrink > 20) === (isOldEnoughToDrive > 20);
   return isOldEnoughToDrinkAndDriveResult;
 }
 
 function categorizeAcidity(pH) {
   var categorizeAcidityResult = pH;
 
-  if ((pH >= 0) || (pH <= 6)) {
+  if ((pH >= 0) || (pH <= 6.6)) {
     categorizeAcidityResult = 'Acid';
   }
-  if ((pH >= 8) && (pH <= 14)) {
+  if ((pH >= 7.4) && (pH <= 14)) {
     categorizeAcidityResult = 'Base';
   }
   if ((pH === 7)) {

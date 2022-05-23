@@ -6,13 +6,15 @@
  and the rest will be lowercased. */
 
 function capitalize(word) {
-  var capitalizeResult = [];
+  var capitalizeResult = word.split('');
   for (var i = 0; i < word.length; i++) {
-    if (word[(0)] === (word[(0)].toLowerCase())) {
-      capitalizeResult = (word[0].toUpperCase());
-    } else {
-      capitalizeResult = word[i].toLowerCase();
-    }
+    capitalizeResult = word[0].toUpperCase() + word.substring(1).toLowerCase();
+
   }
   return capitalizeResult;
 }
+
+/* when the function capitalize is called with a word parameter,
+the for loop will run from the beginning at index 0 of the string and will run until the end of the string.
+the variable capitalizeResult will split the parameter into strings, and what is returned will be
+the first character at index 0 uppercased, and the rest of the string will be lowercased. */

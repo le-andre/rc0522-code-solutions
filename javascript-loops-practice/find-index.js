@@ -11,3 +11,4 @@ function findIndex(array, value) {
   }
   return findIndexResult;
 }
+/* */

@@ -1,0 +1,42 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.column-full {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  position: fixed;
+  top: 420px;
+}
+
+span {
+  white-space: pre;
+}
+
+.correct {
+  color: greenyellow;
+}
+
+.wrong {
+  color: red;
+}
+
+.current-index {
+  border-bottom-style: solid;
+  padding-bottom: 10px;
+}
+
+h1 {
+  letter-spacing: -2px;
+  word-spacing: 0;
+  font-family: sans-serif;
+}

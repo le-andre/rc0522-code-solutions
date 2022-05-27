@@ -17,9 +17,9 @@ function tabContainerFunction(event) {
     var dataValue = event.target.getAttribute('data-view');
     for (var u = 0; u < viewNodeList.length; u++) {
       if (viewNodeList[u].getAttribute('data-view') === dataValue) {
-        viewNodeList[u].className = 'data-view';
+        viewNodeList[u].className = 'view';
       } else {
-        viewNodeList[u].className = 'hidden';
+        viewNodeList[u].className = 'view hidden';
       }
     }
   }

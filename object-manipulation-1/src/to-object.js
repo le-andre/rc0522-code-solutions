@@ -1,8 +1,9 @@
 /* exported toObject */
 function toObject(keyValuePair) {
   var toObjectResult = {};
-  for (var i = 0; i < keyValuePair.length; i++) {
-    toObjectResult = keyValuePair.join(': ');
-  }
+  var key = keyValuePair[0];
+  var value = keyValuePair[1];
+
+  toObjectResult[key] = value;
   return toObjectResult;
 }

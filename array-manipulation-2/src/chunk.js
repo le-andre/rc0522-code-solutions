@@ -8,3 +8,4 @@ function chunk(array, size) {
 
   return chunkResult;
 }
+

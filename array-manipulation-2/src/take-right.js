@@ -5,3 +5,4 @@ function takeRight(array, count) {
 
   } return value;
 }
+

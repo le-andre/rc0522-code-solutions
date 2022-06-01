@@ -5,3 +5,4 @@ function dropRight(array, count) {
 
   } return value;
 }
+

@@ -1,18 +1,23 @@
 /* exported calculator */
 var calculator = {
   add: function (x, y) {
+    // var sum = x + y
     return x + y;
   },
   subtract: function (x, y) {
+    // var difference = x - y
     return x - y;
   },
   multiply: function (x, y) {
+
     return x * y;
   },
   divide: function (x, y) {
+    // var quotient = x / y
     return x / y;
   },
   square: function (x, y) {
+    // var squared = x * x
     return (x * x);
   },
   sumAll: function (numbers) {

@@ -48,7 +48,7 @@ function previousFunction(event) {
   }
 }
 
-for (var button of icons) {
+/* for (var button of icons) {
   button.addEventListener('click', function (event) {
     for (var i = 0; i < icons.length; i++) {
       if (event.target === icons[0]) {
@@ -99,6 +99,24 @@ for (var button of icons) {
         icons[i].className = 'fa-regular fa-circle';
         icons[5].className = 'fa-solid fa-circle';
         index = 5;
+      }
+    }
+  });
+}
+*/
+for (var button of icons) {
+  button.addEventListener('click', function (event) {
+    for (var i = 0; i < carousels.length; i++) {
+      if (icons[i] === event.target) {
+        icons[i].className = 'fa-solid fa-circle';
+        carousels[i].className = 'carousel';
+        clearInterval(timer);
+        timer = setInterval(nextFunction, 3.0 * 1000);
+      } else {
+        icons[i].className = 'fa-regular fa-circle';
+        carousels[i].className = 'carousel hidden';
+        clearInterval(timer);
+        timer = setInterval(nextFunction, 3.0 * 1000);
       }
     }
   });

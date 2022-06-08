@@ -23,7 +23,6 @@ function nextFunction(event) {
     index++;
     icons[index].className = 'fa-solid fa-circle';
     carousels[index].className = 'carousel';
-
   }
 }
 
@@ -45,6 +44,7 @@ function previousFunction(event) {
     index--;
     icons[index].className = 'fa-solid fa-circle';
     carousels[index].className = 'carousel';
+
   }
 }
 
@@ -110,6 +110,7 @@ for (var button of icons) {
       if (icons[i] === event.target) {
         icons[i].className = 'fa-solid fa-circle';
         carousels[i].className = 'carousel';
+        index = [i];
         clearInterval(timer);
         timer = setInterval(nextFunction, 3.0 * 1000);
       } else {

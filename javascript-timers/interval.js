@@ -3,15 +3,13 @@ function h1Edit() {
   h1.textContent = '~Earth Beeeelooowww Us~';
 }
 
+var nIntervID = setInterval(countDown, 1.0 * 1000);
 var time = 4;
-
 function countDown() {
-  h1.textContent = time--;
-  if (time === -1) {
+  h1.textContent = time - 1;
+  time--;
+  if (time <= 0) {
     clearInterval(nIntervID);
     h1Edit();
   }
-
 }
-
-var nIntervID = setInterval(countDown, 1000);

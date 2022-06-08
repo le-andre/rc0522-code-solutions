@@ -1,0 +1,66 @@
+body {
+  height: 50vh;
+  display: grid;
+  place-items: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 800px;
+  height: 350px;
+  position: relative;
+}
+
+.row {
+  display: flex;
+  width: 100%;
+}
+
+.column-full {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.border {
+  border-style: solid;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel {
+  width: 1002px;
+  height: 534px;
+  position: absolute;
+  transition: all 0.5s;
+  border-style: solid;
+  transition-property: margin-right;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: scale-down;
+}
+
+#left {
+  position: absolute;
+  top: 72%;
+  left: 4%;
+}
+
+#right {
+  position: absolute;
+  top: 72%;
+  right: -22%;
+}
+
+.circles {
+  position: absolute;
+  bottom: -49%;
+  left: 54%;
+}

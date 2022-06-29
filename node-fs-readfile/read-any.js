@@ -1,5 +1,5 @@
 const fs = require('fs');
-fs.readFile('/workspaces/rc0522-code-solutions/node-fs-readfile/' + process.argv[2], 'utf8', (err, data) => {
+fs.readFile('../node-fs-readfile/' + process.argv[2], 'utf8', (err, data) => {
   if (err) throw err;
   console.log(data);
 });

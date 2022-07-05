@@ -15,6 +15,8 @@ app.get('/api/grades', (req, res) => {
 });
 
 app.post('/api/grades', (req, res) => {
+  // console.log('body:'req.body)
+  // res.json('testing')   recommended to do these when creating post
   const newGrade = req.body;
   const id = nextID++;
   newGrade.id = id;

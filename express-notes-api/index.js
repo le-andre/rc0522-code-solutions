@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const dataObject = require('./data.json');
 const fs = require('fs');
-let nextID = 10;
+let nextID = dataObject.nextId;
 app.use(express.json());
 
 app.get('/api/notes', (req, res) => {
@@ -30,26 +30,26 @@ app.get('/api/notes/:id', (req, res) => {
 app.post('/api/notes', (req, res) => {
   const newObject = req.body;
   const id = nextID++;
-  if (Object.keys(req.body).length === 0) {
+  if (typeof newObject.content === 'undefined') {
     res.status(400).json({
       error: 'content is a required field'
     });
-  } else {
-    newObject.id = id;
-    dataObject.notes[id] = newObject;
-    fs.appendFile('data.json', JSON.stringify(newObject, null, 2), err => {
-      if (err) {
-        res.status(500).json({
-          error: 'An unexpected error has occured'
-        });
-
-      }
-    });
-    res.status(201).json(newObject);
+    return;
   }
+  newObject.id = id;
+  dataObject.notes[id] = newObject;
+  dataObject.nextId++;
+  fs.writeFile('data.json', JSON.stringify(dataObject, null, 2), 'utf8', err => {
+    if (err) {
+      console.error(err);
+      res.status(500).json({
+        error: 'An unexpected error has occured'
+      });
+    } else {
+      res.status(201).json(newObject);
+    }
+  });
 });
-// else if (Object.keys(req.body).length !== 0 && newObject ===1 ){
-//     res.status(500).json(error: "An unexpected error occured")
-//   }
+
 // eslint-disable-next-line no-console
 app.listen(3000, console.log('listening at 3000!'));

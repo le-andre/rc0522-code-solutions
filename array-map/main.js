@@ -9,13 +9,13 @@ const languages = [
 ];
 
 const doubled = numbers.map(x => x * 2);
-console.log(doubled);
+console.log('doubled:', doubled);
 
 const prices = numbers.map(x => `$${x}.00`);
-console.log(prices);
+console.log('prices:', prices);
 
 const upperCased = languages.map(x => x.toUpperCase());
-console.log(upperCased);
+console.log('uppercased:', upperCased);
 
 const firstLetters = languages.map(x => x[0]);
-console.log(firstLetters);
+console.log('firstLetters:', firstLetters);

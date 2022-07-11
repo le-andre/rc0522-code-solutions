@@ -19,13 +19,13 @@ const traits = [
 const z = 0;
 const i = 1;
 const sum = numbers.reduce((x, y) => x + y, z);
-console.log(sum);
+console.log('sum:', sum);
 
 const product = numbers.reduce((x, y) => x * y, i);
-console.log(product);
+console.log('product:', product);
 
 const balance = account.reduce((x, y) => y.type === 'deposit' ? x + y.amount : x - y.amount, z);
-console.log(balance);
+console.log('balance:', balance);
 
 const composite = traits.reduce((x, y) => Object.assign(x, y));
-console.log(composite);
+console.log('composite:', composite);

@@ -13,45 +13,25 @@ const names = [
 ];
 
 function isEven(num) {
-  let newObject = [];
-  if (num % 2 === 0) {
-    newObject += num;
-    return newObject;
-  }
+  return num % 2 === 0;
 }
-
 const evenNumbers = numbers.filter(isEven);
 console.log('evenNumbers:', evenNumbers);
 
 function isOverFive(num) {
-  let newObject = [];
-
-  if (num > 5) {
-    newObject += num;
-    return newObject;
-  }
+  return num > 5;
 }
 const overFive = numbers.filter(isOverFive);
 console.log('overFive:', overFive);
 
 function isStartWithE(name) {
-  let newObject = [];
-  if (name.startsWith('E')) {
-    newObject += name;
-    return newObject;
-  }
+  return name.startsWith('E');
 }
-
 const startWithE = names.filter(isStartWithE);
 console.log('startWithE:', startWithE);
 
 function isHaveD(name) {
-  let newObject = [];
-  if (name.includes('D') || name.includes('d')) {
-    newObject += name;
-    return newObject;
-  }
+  return name.includes('D') || name.includes('d');
 }
-
 const haveD = names.filter(isHaveD);
 console.log('haveD:', haveD);

@@ -30,9 +30,9 @@ app.get('/api/grades', (req, res) => {
 app.post('/api/grades', (req, res) => {
   const data = req.body;
   const sql = {
-    text: 'INSERT INTO grades(name, course, score) VALUES($1, $2, $3) RETURNING *',
-    values: [data.name, data.course, data.score]
+    text: 'INSERT INTO grades(name, course, score) VALUES($1, $2, $3) RETURNING *'
   };
+  const values = [data.name, data.course, data.score];
   if (!data.name || !data.course || !data.course) {
     res.status(400).json({
       error: 'missing name, course, or score'
@@ -45,9 +45,9 @@ app.post('/api/grades', (req, res) => {
     });
     return;
   }
-  db.query(sql)
+  db.query(sql, values)
     .then(result => {
-      const grade = result.rows;
+      const grade = result.rows[0];
       res.status(201).send(grade);
     })
     .catch(err => {
@@ -83,8 +83,8 @@ app.put('/api/grades/:gradeId', (req, res) => {
   }
   db.query(query, values)
     .then(result => {
-      const grade = result.rows;
-      if (grade.length === 0) {
+      const grade = result.rows[0];
+      if (!grade) {
         res.status(404).json({
           error: 'cannot find grade with id: ' + id
         });
@@ -107,16 +107,17 @@ app.delete('/api/grades/:gradeId', (req, res) => {
                   RETURNING *
                   `;
   const values = [id];
+  if (id <= 0) {
+    res.status(400).json({
+      error: 'invalid ID, must be an positive integer'
+    });
+    return;
+  }
+
   db.query(query, values)
     .then(result => {
-      const grade = result.rows;
-      if (id <= 0) {
-        res.status(400).json({
-          error: 'invalid ID, must be an positive integer'
-        });
-        return;
-      }
-      if (grade.length === 0) {
+      const grade = result.rows[0];
+      if (!grade) {
         res.status(404).json({
           error: 'cannot find grade with id: ' + id
         });

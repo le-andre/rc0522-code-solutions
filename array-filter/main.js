@@ -14,23 +14,21 @@ const names = [
 
 function isEven(num) {
   let newObject = [];
-  for (let i = 0; i <= num; i++) {
-    if (num % 2 === 0) {
-      newObject += num;
-      return newObject;
-    }
-  } return false;
+  if (num % 2 === 0) {
+    newObject += num;
+    return newObject;
+  }
 }
+
 const evenNumbers = numbers.filter(isEven);
 console.log('evenNumbers:', evenNumbers);
 
 function isOverFive(num) {
   let newObject = [];
-  for (let i = 0; i <= num; i++) {
-    if (num > 5) {
-      newObject += num;
-      return newObject;
-    }
+
+  if (num > 5) {
+    newObject += num;
+    return newObject;
   }
 }
 const overFive = numbers.filter(isOverFive);
@@ -38,11 +36,9 @@ console.log('overFive:', overFive);
 
 function isStartWithE(name) {
   let newObject = [];
-  for (let i = 0; i <= names.length; i++) {
-    if (name[0] === 'E') {
-      newObject += name;
-      return newObject;
-    }
+  if (name.startsWith('E')) {
+    newObject += name;
+    return newObject;
   }
 }
 
@@ -51,11 +47,9 @@ console.log('startWithE:', startWithE);
 
 function isHaveD(name) {
   let newObject = [];
-  for (let i = 0; i <= names.length; i++) {
-    if (name[i] === 'D' || name[i] === 'd') {
-      newObject += name;
-      return newObject;
-    }
+  if (name.includes('D') || name.includes('d')) {
+    newObject += name;
+    return newObject;
   }
 }
 

@@ -22,7 +22,7 @@ function isEven(num) {
   } return false;
 }
 const evenNumbers = numbers.filter(isEven);
-console.log(evenNumbers);
+console.log('evenNumbers:', evenNumbers);
 
 function isOverFive(num) {
   let newObject = [];
@@ -34,7 +34,7 @@ function isOverFive(num) {
   }
 }
 const overFive = numbers.filter(isOverFive);
-console.log(overFive);
+console.log('overFive:', overFive);
 
 function isStartWithE(name) {
   let newObject = [];
@@ -47,7 +47,7 @@ function isStartWithE(name) {
 }
 
 const startWithE = names.filter(isStartWithE);
-console.log(startWithE);
+console.log('startWithE:', startWithE);
 
 function isHaveD(name) {
   let newObject = [];
@@ -60,4 +60,4 @@ function isHaveD(name) {
 }
 
 const haveD = names.filter(isHaveD);
-console.log(haveD);
+console.log('haveD:', haveD);

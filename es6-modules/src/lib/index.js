@@ -1,4 +1,4 @@
-import { noop } from './noop';
+import noop from './noop';
 import toArray from './to-array';
 import createElement from './create-element';
 

@@ -1,18 +1,18 @@
-function ExampleClass() {
+// function ExampleClass() {
 
+// }
+
+// const example = new ExampleClass();
+class ExampleClass {
+  constructor(example) {
+    this.example = example;
+  }
+
+  getExample() {
+    return this.example;
+  }
 }
-
-const example = new ExampleClass();
-// class ExampleClass {
-//   constructor(example) {
-//     this.example = example;
-//   }
-
-// //   example() {
-// //     return ExampleClass();
-// //   }
-// // }
-// // const example = new ExampleClass();
+const example = new ExampleClass('test');
 
 console.log('typeof example:', typeof example);
 console.log('value of example:', example);

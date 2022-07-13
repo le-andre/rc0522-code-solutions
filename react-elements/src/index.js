@@ -1,9 +1,9 @@
 import React from 'react';
-import * as ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 const reactObject = React.createElement(
   'h1',
   [null],
-  ['Hello,React!']
+  ['Hello, React!']
 );
 const container = document.getElementById('root');
 const root = ReactDOM.createRoot(container);

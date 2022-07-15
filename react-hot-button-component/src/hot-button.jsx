@@ -1,37 +1,32 @@
 import React from 'react';
-let counter = 0;
+
 export default class HotButton extends React.Component {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
-    this.state = { isClicked: counter };
+    this.state = { counter: 0 };
   }
 
   handleClick() {
-    this.setState({ isClicked: counter++ });
+    this.setState({ counter: this.state.counter + 1 });
   }
 
   render() {
-    if (counter < 3) {
-      return <button onClick={this.handleClick}>Click!</button>;
-    }
+    let btnClass = '';
+    const counter = this.state.counter;
     if (counter >= 3 && counter < 6) {
-      return <button onClick={this.handleClick} className="button-one">Click!</button>;
+      btnClass = 'button-one';
+    } else if (counter >= 6 && counter < 9) {
+      btnClass = 'button-two';
+    } else if (counter >= 9 && counter < 12) {
+      btnClass = 'button-three';
+    } else if (counter >= 12 && counter < 15) {
+      btnClass = 'button-four';
+    } else if (counter >= 15 && counter < 18) {
+      btnClass = 'button-five';
+    } else if (counter >= 18) {
+      btnClass = 'button-six';
     }
-    if (counter >= 6 && counter < 9) {
-      return <button onClick={this.handleClick} className="button-two">Click!</button>;
-    }
-    if (counter >= 9 && counter < 12) {
-      return <button onClick={this.handleClick} className="button-three">Click!</button>;
-    }
-    if (counter >= 12 && counter < 15) {
-      return <button onClick={this.handleClick} className="button-four">Click!</button>;
-    }
-    if (counter >= 15 && counter < 18) {
-      return <button onClick={this.handleClick} className="button-five">Click!</button>;
-    }
-    if (counter >= 18) {
-      return <button onClick={this.handleClick} className="button-six">Click!</button>;
-    }
+    return <button onClick={this.handleClick} className={btnClass}>Click!</button>;
   }
 }

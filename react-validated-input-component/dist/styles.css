@@ -1,0 +1,21 @@
+.error {
+  color: red;
+  position: absolute;
+  left: 85px;
+  bottom: 99px;
+}
+
+.hidden {
+  opacity: 0;
+  display: none;
+}
+
+.fa-check {
+  color: green;
+  margin-left: 10px;
+}
+
+.fa-xmark {
+  color: red;
+  margin-left: 10px;
+}

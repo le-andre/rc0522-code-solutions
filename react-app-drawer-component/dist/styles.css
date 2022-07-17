@@ -11,6 +11,7 @@ h2 {
 .hidden {
   visibility: hidden;
   opacity: 0;
+  left: -200px;
 }
 
 .modal-bg {
@@ -21,25 +22,18 @@ h2 {
   height: 100%;
   visibility: visible;
   opacity: 1;
+  transition: 0.5s ease-in-out;
 }
 
-.modal-content,
-.modal-content::before,
-.modal-content::after {
-  position: relative;
+.modal-content {
+  position: absolute;
   background-color: white;
   width: 12%;
   height: 100%;
   opacity: 1;
-  transition: all 1s ease-in-out;
-}
-
-.modal-content::before {
-  transform: translateX(0%);
-}
-
-.modal-content::after {
-  transform: translateX(1000%);
+  transition: 0.5s ease-in-out;
+  left: 0;
+  padding-left: 10px;
 }
 
 .fa-burger {

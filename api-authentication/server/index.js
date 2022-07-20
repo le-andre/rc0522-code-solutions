@@ -17,7 +17,7 @@ const app = express();
 
 const jsonMiddleware = express.json();
 
-app.use(jsonMiddleware);
+app.use(jsonMiddleware); // creates req.body
 
 app.post('/api/auth/sign-up', (req, res, next) => {
   const { username, password } = req.body;
@@ -51,7 +51,8 @@ app.post('/api/auth/sign-in', (req, res, next) => {
   /* your code starts here */
 
   const sql = `
-SELECT ("userId", "hashedPassword")
+SELECT "userId",
+      "hashedPassword"
 FROM "users"
 where "username" = $1
 `;
@@ -59,26 +60,27 @@ where "username" = $1
   db.query(sql, value)
     .then(result => {
       const newObj = result.rows[0];
+      // const [newObj] = result.rows
       if (!newObj) {
         throw new ClientError(401, 'invalid login');
       }
-      if (newObj) {
-        const hashedPassword = '$argon2i$v=19$m=4096,t=3,p=1$h7icQD/xZr8akZsX+hNA0A$h68atJWyjvunAwNOpSpMfg9sPvoMQ6dKwoh0dJhurWA';
-        argon2
-          .verify(hashedPassword, password)
-          .then(isMatching => {
-            if (isMatching === false) {
-              throw new ClientError(401, 'invalid login');
-            }
-            const user = {
-              userId: 1,
-              username: 'admin'
-            };
-            const token = jwt.sign(user, process.env.TOKEN_SECRET);
-            res.status(200).send({ token, user });
-          })
-          .catch(err => next(err));
-      }
+      // const { userId, hashedPassword } = newObj;
+      const userId = newObj.userId;
+      const hashedPassword = newObj.hashedPassword;
+      return argon2
+        .verify(hashedPassword, password)
+        .then(isMatching => {
+          if (isMatching === false) {
+            throw new ClientError(401, 'invalid login');
+          }
+          const payload = {
+            userId,
+            username
+          };
+          const token = jwt.sign(payload, process.env.TOKEN_SECRET);
+          res.status(200).send({ token, user: payload });
+        })
+        .catch(err => next(err));
     })
     .catch(err => next(err));
   /**

@@ -25,14 +25,40 @@ app.post('/api/auth/sign-up', (req, res, next) => {
   }
 
   /* your code starts here */
-  const sql = 'INSERT INTO users(username, hashedPassword) VALUES($1, $2) RETURNING(userId, username, createdAt)';
-  const values = [username, password];
+
   argon2.hash(password)
-    .then(db.query(sql, values)
-      .then(result => {
-        const newObj = result.rows[0];
-        res.status(201).send(newObj);
-      }));
+    .then(hashedPassword => {
+      const sql = `
+  INSERT INTO "users" ("username", "hashedPassword")
+  VALUES($1, $2)
+  RETURNING "userId", "username", "createdAt"
+  `;
+      const values = [username, hashedPassword];
+      db.query(sql, values)
+        .then(result => {
+          const newObj = result.rows[0];
+          res.status(201).send(newObj);
+        })
+        .catch(err => next(err));
+    })
+    .catch(err => next(err));
+
+  // argon2.hash(password)
+  //   .then(hashedPassword => {
+  //     const sql = `
+  //       INSERT INTO "users" ("username", "hashedPassword")
+  //       VALUES($1, $2)
+  //       RETURNING "userId", "username", "createdAt"
+  //     `;
+  //     const values = [username, hashedPassword];
+  //     return db.query(sql, values); return allows to chain .then, don't need aditional .catch
+  //   })
+  //   .then(result => {
+  //     const newObj = result.rows[0];
+  //     res.status(201).send(newObj);
+  //   })
+  //   .catch(err => next(err));
+
   /**
    * Hash the user's password with `argon2.hash()`
    * Then, 😉

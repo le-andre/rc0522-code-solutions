@@ -10,6 +10,7 @@ function authorizationMiddleware(req, res, next) {
   const payload = jwt.verify(token, process.env.TOKEN_SECRET);
   req.user = payload;
   next();
+
   /**
    * Try to get the 'X-Access-Token' from the request headers.
    * If no token is provided,

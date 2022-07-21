@@ -21,7 +21,7 @@ export default class App extends React.Component {
      */
     fetch('/api/todos')
       .then(res => res.json())
-      .then(todos => { this.setState({ todos }); });
+      .then(todos => this.setState({ todos }));
   }
 
   addTodo(newTodo) {
@@ -41,9 +41,9 @@ export default class App extends React.Component {
     * TIP: Use Array.prototype.concat to create a new array containing the contents
     * of the old array, plus the object returned by the server.
     */
-    fetch('/api/todos', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(this.state.todos) })
+    fetch('/api/todos', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(newTodo) })
       .then(res => res.json())
-      .then(todos => { this.setState({ todos: Array.from(this.state.todos).concat(newTodo) }); });
+      .then(todos => { this.setState({ todos: this.state.todos.concat(todos) }); });
 
   }
 
@@ -69,18 +69,16 @@ export default class App extends React.Component {
      * TIP: Be sure to SERIALIZE the updates in the body with JSON.stringify()
      * And specify the "Content-Type" header as "application/json"
      */
-    const index = this.state.todos.findIndex(todo => todo.todoId === todoId);
-    const completed = { isCompleted: !this.state.todos[index].isCompleted };
-    // console.log(this.state.todos);
-    // console.log(this.state.todos[todoId]);
-    // console.log(this.state.todos[todoId].isCompleted);
-    // console.log(this.state.todos[todoId].todoId);
-    // console.log(completed);
+    const index = this.state.todos.findIndex(todo => {
+      return todo.todoId === todoId;
+    });
 
-    fetch(`/api/todos/${todoId}`, { method: 'PATCH', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(completed) })
+    fetch(`/api/todos/${todoId}`, { method: 'PATCH', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ isCompleted: !index.isCompleted }) })
       .then(res => res.json())
-      .then(todos => { this.setState({ todos: JSON.parse(JSON.stringify(todos[index]).concat(todos[index])) }); });
+      .then(newTodos => {
+        this.setState({ todos: this.state.todos.map(newTodos.todoId) });
 
+      });
   }
 
   render() {

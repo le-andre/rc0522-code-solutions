@@ -1,0 +1,34 @@
+User can sign up:
+in ./react-context/client/components, the auth-form.jsx component,
+the AuthForm class function that is extended from React.Component has a constructor of props,
+the property username with the value of an empty string, and the property password
+ with the value of an empty string is being assigned to this.state. The handleChange
+ component of AuthForm will update the name property of this.state. If the user clicks
+ on the register button after submitting their username and password, the handleSubmit
+ component of the AuthForm will check if the window.location.hash is equal to the
+ string sign-up, if it is, change the window.location.hash to sign-in, after submitting
+ the information to the database with the event.preventDefault, and then changing the page
+hash, the render component will display the user can sign-in page.
+
+User can sign in:
+In ./client/components, the auth-form component has a class function AuthForm that extends React.Component.
+The function has a props constructor and assigns the property username with an empty string and the property
+password with an empty string to this.state. This.handleChange and this.handleSubmit are bound to this.
+the handleChange component function will update the state of username and password. When submitted, the handleSubmit function
+has a event.preventDefault that will pass the username and password to the onSignIn class of the imported AuthForm component
+in the AuthPage component function calling the handleSignIn function that is imported from the ./pages App component.
+
+user can stay signed in:
+in ./react-context/pages, the app.jsx component has a  App class function that extends React.Component
+has a constructorof props and assigns the properties of user, isAuthorizing and route to this.state.
+In this constructor, this.handleSignIn is bound to this. The handleSignIn function deconstructs the properties
+of user and token from the result that was passed into the handleSignIn function. That result is from the auth-form
+component, from the handleSubmit function. The string react-context-jwt and the token from result will be set to
+window.localStorage. The user state is then updated with the user from result. After page load, the componentDidMount will
+check if there is a user token, if there is, the user should stay signed in.
+
+User can sign out:
+in ./client/components the navbar component has a class function that extends React.Component.
+In that function, on click of the button with the text content Sign Out, the imported handleSignOut function
+from the ./pages App component will remove the react-context-jwt string from the windows.localStorage and
+change the state of user to null which should successfully log the user out.

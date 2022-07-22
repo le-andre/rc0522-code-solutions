@@ -1,0 +1,28 @@
+.container {
+  padding-top: 50px;
+  width: 294px;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+}
+
+.tab {
+  transition: 1s;
+  position: relative;
+  background: rgb(128 128 128 / 39.7%);
+  outline-style: solid;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.hidden {
+  position: absolute;
+  bottom: 0;
+  opacity: 0;
+}
+
+.view {
+  outline-style: solid;
+}
